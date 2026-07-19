@@ -3,7 +3,8 @@
 A clean, modern rental application website. Applicants fill out a short multi-step
 form and pay a **$39.99 application fee** via Stripe Checkout to submit.
 
-
+This project is completely standalone — it is **not** connected to TrueCap or any
+other product, and uses its own Stripe account.
 
 ## Tech
 
