@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: #f7f8fa;
+  color: #13161d;
+}
+
+/* Soft accent glow behind the page */
+.app-bg {
+  background:
+    radial-gradient(900px 460px at 50% -8%, #eef0fe 0%, rgba(238, 240, 254, 0) 62%),
+    #f7f8fa;
+}
+
+::selection {
+  background: #d6dafb;
+}
+
+/* Remove number input spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .field-label {
+    @apply mb-2 block text-[13px] font-medium text-ink-soft;
+  }
+  .field-input {
+    @apply w-full rounded-[10px] border border-[#DDE1E9] bg-white px-3.5 py-3 text-[15px] text-ink caret-accent outline-none transition placeholder:text-ink-muted/60 hover:border-ink-muted/40 focus:border-accent focus:ring-2 focus:ring-accent/30;
+  }
+  .field-error {
+    @apply mt-1.5 text-[13px] text-red-600;
+  }
+}
